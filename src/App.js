@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+  import style from './Components/Style.css'
+  import { useState, useRef } from 'react';
+  import SimpleCalculator from './Components/SimpleCalculator'
+  import ListGroups from './Components/ListGroups'
+  import GussesTheNumber from './Components/GusseTheNumber'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  function App() {
+    return(
+      // <SimpleCalculator/>
+      //<ListGroups name = "Robel"/>
+      <GussesTheNumber/>
+    )
+  }
 
-export default App;
+  export default App;
