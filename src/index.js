@@ -1,18 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import ListGroups from './Components/ListGroups';
-import reportWebVitals from './reportWebVitals';
+import GuessNumberApp from './GuessNumberApp'
+import ColorApp from './ColorApp';
+import UserPostCommentApp from './UserPostCommentApp';
+import { Routes } from 'react-router-dom';
+import RoutingApp from './RoutingApp';
 
+import { BrowserRouter } from 'react-router-dom';
+import BookStoreApp from './BookStoreApp';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+        {/* <GuessNumberApp /> */}
+        {/* < ColorApp /> */}
+        {/* <UserPostCommentApp /> */}
+        {/* <BrowserRouter>
+          <RoutingApp />
+        </BrowserRouter> */}
+        <BrowserRouter>
+          <BookStoreApp />
+        </BrowserRouter>
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

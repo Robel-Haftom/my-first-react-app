@@ -1,8 +1,7 @@
-import style from './Style.css'
+// import '../Guess Number Game/Style.css';
 import { useState, useRef } from 'react';
 
-function GussesTheNumber(){
-
+function GuessTheNumber(){
     //hookes
     const userInputGusee = useRef(null);
     const [computersGusse , setComputersGusse] = useState(0);
@@ -90,4 +89,4 @@ function GussesTheNumber(){
     );
 }
 
-export default GussesTheNumber;
+export default GuessTheNumber;

@@ -1,0 +1,30 @@
+body{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+p{
+    font-size: 28px;
+    font-weight: 400;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+}
+
+.main{
+    flex-direction: column;
+    margin: 10% auto;
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 10px 2px black;
+}
+
+input{
+    /* max-width: 500px;
+    border: 1px solid black;
+    box-shadow: 2px 2px 10px 2px black;
+    border-radius: 8px; */
+}
