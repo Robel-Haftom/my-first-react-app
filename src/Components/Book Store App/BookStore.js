@@ -1,5 +1,5 @@
 import style from './bookstore.css'
-const BookStore = ({ title, author, pages, isRead, image, setTitle, setAuthor, setPages, setIsRead, setImage, handleSubmit, handleImageChange }) =>{
+const BookStore = ({ title, author, pages, isRead, image, genre, setTitle, setAuthor, setPages, setIsRead, setImage, setGenre, handleSubmit }) =>{
     return(
         <div>
             <div className="book-store">
@@ -68,6 +68,39 @@ const BookStore = ({ title, author, pages, isRead, image, setTitle, setAuthor, s
                             checked={isRead}
                             onChange={(e) => setIsRead(e.target.checked)}
                         />
+                    </div>
+                    <div className="book-input-genre">  
+                        <label htmlFor='genre'>Select Genre</label>
+                        <select
+                            className="book-input-select"
+                            id='genre'
+                            onChange={(e) => setGenre(e.target.value)}
+                        >
+                            <option>Adventure</option>
+                            <option>Biography</option>
+                            <option>Children Literature</option>
+                            <option>Comedy</option>
+                            <option>Crime Fiction</option>
+                            <option>Drama</option>
+                            <option>Dystopian</option>
+                            <option>Fantasy</option>
+                            <option>Graphic Novel</option>
+                            <option>Historical Fiction</option>
+                            <option>Horror</option>
+                            <option>Mystery</option>
+                            <option>Non-Fiction</option>
+                            <option>Other</option>
+                            <option>Philosophy</option>
+                            <option>Poetry</option>
+                            <option>Romance</option>
+                            <option>Science</option>
+                            <option>Science Fiction</option>
+                            <option selected>Select</option>
+                            <option>Self-Help</option>
+                            <option>Thriller</option>
+                            <option>Travel</option>
+                            <option>Young Adult</option>
+                        </select>
                     </div>
                     <div className='add-button'>
                         <button className="input-add-book" type="submit">Add Book</button>

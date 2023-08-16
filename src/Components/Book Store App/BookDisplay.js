@@ -23,6 +23,7 @@ const BookDisplay = ({ books, favorite, setFavorite, handleFavorite, handleDelet
                     <div className="each-book" key={book.id}>
                         <div className="upper-book-detail">
                             <div className="book-image">
+                                <p className='book-genre'>Genre: {book.genre}</p>
                                 <img src={book3} alt="book image here"/>
                             </div>
                             <div className="book-detail">

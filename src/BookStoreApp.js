@@ -13,6 +13,7 @@ const BookStoreApp = () => {
     const [isRead, setIsRead] = useState(false); 
     const [image, setImage] = useState("");
     const [favorite, setFavorite] = useState(false);
+    const [genre, setGenre] = useState("Unknown");
     const [searchBook, setSearchBook] = useState("");
     const navigate = useNavigate();
     const randomChars = ['a','b','c','d','e','f','g','h','i','j',1,2,3,4,5,6,7,8,9,0];
@@ -39,14 +40,16 @@ const BookStoreApp = () => {
             isRead,
             image,
             favorite,
+            genre,
         };
         const allBooks = [...books, newBook];
         setTitle("");
         setAuthor("");
         setPages("");
         setIsRead(false);
-        setImage("")
+        setImage("");
         setFavorite(false);
+        setGenre("other");
         setBooks(allBooks);
         localStorage.setItem("books", JSON.stringify(allBooks));
         navigate("/");
@@ -72,6 +75,7 @@ const BookStoreApp = () => {
         localStorage.setItem("books", JSON.stringify(updatedBook));
         }
     
+
     return(
         <>
             <Header />
@@ -85,12 +89,14 @@ const BookStoreApp = () => {
                         pages={pages}
                         isRead={isRead}
                         image={image}
-                        setImage={setImage}
-                        handleSubmit={handleSubmit}
+                        genre={genre}
                         setTitle={setTitle}
                         setAuthor={setAuthor}
                         setPages={setPages}
                         setIsRead={setIsRead}
+                        setImage={setImage}
+                        setGenre={setGenre}
+                        handleSubmit={handleSubmit}
                     />
                     } />
                 <Route
@@ -102,6 +108,22 @@ const BookStoreApp = () => {
                             ||
                             book.author.toLowerCase().includes(searchBook.toLowerCase())
                             ))}
+                        favorite={favorite}
+                        setFavorite={setFavorite}
+                        handleFavorite={handleFavorite}
+                        handleDelete={handleDelete}
+                        handleRead={handleRead}
+                        searchBook={searchBook}
+                        setSearchBook={setSearchBook}
+                        />
+                    }
+                />  
+                <Route
+                    path="/favorites"
+                    element={
+                    <BookDisplay 
+                        books={books.filter(book =>(
+                            book.favorite == true))}
                         favorite={favorite}
                         setFavorite={setFavorite}
                         handleFavorite={handleFavorite}
