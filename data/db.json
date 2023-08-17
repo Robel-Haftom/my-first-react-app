@@ -1,76 +1,24 @@
 {
   "books": [
     {
-      "id": "d55ha",
-      "title": "hjsdh",
-      "author": "nsjhds",
-      "pages": "54",
+      "id": "gif49",
+      "title": "Abebe",
+      "author": "kebede",
+      "pages": "123",
       "isRead": false,
       "image": "",
-      "favorite": false
+      "favorite": false,
+      "genre": "Unknown"
     },
     {
-      "id": "if6ci",
-      "title": "ank",
-      "author": "ksadn",
-      "pages": "545",
-      "isRead": false,
+      "id": "j91af",
+      "title": "Camelot of Africa",
+      "author": "Robel Haftom",
+      "pages": "1356",
+      "isRead": true,
       "image": "",
-      "favorite": false
-    },
-    {
-      "id": "18e14",
-      "title": "sjka",
-      "author": "545",
-      "pages": "456",
-      "isRead": false,
-      "image": "",
-      "favorite": false
-    },
-    {
-      "id": "0bd87",
-      "title": "ka",
-      "author": "4",
-      "pages": "5",
-      "isRead": false,
-      "image": "",
-      "favorite": false
-    },
-    {
-      "id": "41j6h",
-      "title": "zx",
-      "author": "45",
-      "pages": "5",
-      "isRead": false,
-      "image": "",
-      "favorite": false
-    },
-    {
-      "id": "14j8b",
-      "title": "robiniho",
-      "author": "sjk",
-      "pages": "45",
-      "isRead": false,
-      "image": "",
-      "favorite": false
-    },
-    {
-      "id": "iebcf",
-      "title": "happy",
-      "author": "4",
-      "pages": "54",
-      "isRead": false,
-      "image": "",
-      "favorite": false
-    },
-    {
-      "id": "51fhd",
-      "title": "chala",
-      "author": "545",
-      "pages": "54",
-      "isRead": false,
-      "image": "",
-      "favorite": false
+      "favorite": true,
+      "genre": "Historical Fiction"
     }
   ]
 }

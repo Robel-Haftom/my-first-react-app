@@ -22,7 +22,20 @@ const BookStoreApp = () => {
     const navigate = useNavigate();
     const randomChars = ['a','b','c','d','e','f','g','h','i','j',1,2,3,4,5,6,7,8,9,0];
 
-    const [books, setBooks] = useState(JSON.parse(localStorage.getItem("books")) ||[]); 
+    const [books, setBooks] = useState([]); 
+
+    useEffect(() =>{
+        const fetchData = async () =>{
+            try {
+                const response =  await fetch(API_URL);
+                const data = await response.json();
+                setBooks(data);
+            } catch (error) {
+                console.log(error.message)
+            }
+        }
+        fetchData();
+    })
     
     function handleRandomId(){
         let randomID = '';
@@ -46,7 +59,7 @@ const BookStoreApp = () => {
             favorite,
             genre,
         };
-        const allBooks = [...books, newBook];
+
         setTitle("");
         setAuthor("");
         setPages("");
@@ -54,29 +67,47 @@ const BookStoreApp = () => {
         setImage("");
         setFavorite(false);
         setGenre("other");
-        setBooks(allBooks);
-        localStorage.setItem("books", JSON.stringify(allBooks));
+       
+        fetch(API_URL, 
+            {
+                method:"POST",
+                headers:{
+                    'Content-type':'application/json'
+                },
+                body:JSON.stringify(newBook)
+            });        
         navigate("/");
     }
 
     const handleDelete = (id) =>{
-        const updatedBooks = books.filter(book => book.id !== id);
-        setBooks(updatedBooks)
-        localStorage.setItem("books", JSON.stringify(updatedBooks));
+        fetch(`${API_URL}/${id}`,{           method:"DELETE"
+            });
     }
 
     const handleRead = (id) =>{
-        const updatedBook = books.map(book =>
-            book.id == id ? {...book, isRead: !book.isRead} : book);
-        setBooks(updatedBook);
-        localStorage.setItem("books", JSON.stringify(updatedBook));
+        const updatedBook = books.filter(book =>
+            book.id == id);
+        fetch(`${API_URL}/${id}`, 
+            {
+                method:"PATCH",
+                headers:{
+                    'Content-type':'application/json'
+                },
+                body:JSON.stringify({isRead: !updatedBook[0].isRead})
+            }); 
     }
 
     const handleFavorite = (id) =>{
-        const updatedBook = books.map(book =>
-            book.id == id ? {...book, favorite: !book.favorite} : book);
-        setBooks(updatedBook);
-        localStorage.setItem("books", JSON.stringify(updatedBook));
+        const updatedBook = books.filter(book =>
+            book.id == id);
+        fetch(`${API_URL}/${id}`,
+        {
+            method:"PATCH",
+            headers:{
+                'Content-type':'application/json'
+            },
+            body:JSON.stringify({favorite: !updatedBook[0].favorite})
+        })
         }
     
 
