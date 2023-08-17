@@ -2,8 +2,8 @@ import search from './Images/search.png'
 import book3 from './Images/book3.png';
 import emptyStar from './Images/empty-star.png'
 import filledStar from './Images/filled-star-1.png'
-import filter from './Images/filter.png'
-const BookDisplay = ({ books, favorite, setFavorite, handleFavorite, handleDelete, handleRead, searchBook, setSearchBook }) =>{   
+
+const BookDisplay = ({ books,setFilterGenre, handleFavorite, handleDelete, handleRead, searchBook, setSearchBook }) =>{   
 
     return(
        <div className='books-home-page'>
@@ -19,7 +19,6 @@ const BookDisplay = ({ books, favorite, setFavorite, handleFavorite, handleDelet
                     />
                     <img className="search-icon" src={search} />
                 </div>
-                <img className='filter-icon' src={filter}/>
             </div>
             {books.length ?
             <div className="all-book-list">
