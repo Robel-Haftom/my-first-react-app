@@ -1,7 +1,8 @@
 import style from './bookstore.css'
 const BookStore = ({ title, author, pages, isRead, image, genre, setTitle, setAuthor, setPages, setIsRead, setImage, setGenre, handleSubmit }) =>{
     return(
-        <div>
+        <>
+            <p className='add-book-title'> Add new Book</p>
             <div className="book-store">
                 <p className='book-store-title'>My Book Store</p>
                 <form onSubmit={handleSubmit}>
@@ -16,6 +17,7 @@ const BookStore = ({ title, author, pages, isRead, image, genre, setTitle, setAu
                         type="text" 
                         required 
                         id="title" 
+                        placeholder='Title of the book...'
                         onChange={(e) => setTitle(e.target.value)}
                         value={title}
                     />
@@ -30,6 +32,7 @@ const BookStore = ({ title, author, pages, isRead, image, genre, setTitle, setAu
                         type="text" 
                         required 
                         id="author" 
+                        placeholder='Name of the author...'
                         onChange={(e) => setAuthor(e.target.value)}
                         value={author}
                     />
@@ -45,6 +48,7 @@ const BookStore = ({ title, author, pages, isRead, image, genre, setTitle, setAu
                         required 
                         min="0" 
                         max="10000" 
+                        placeholder='Number of pages of the book...'
                         id="pages" 
                         onChange={(e) => setPages(e.target.value)}
                         value={pages}
@@ -107,7 +111,7 @@ const BookStore = ({ title, author, pages, isRead, image, genre, setTitle, setAu
                     </div>
                 </form>
             </div>
-        </div>
+        </>
     );
 }
 

@@ -9,13 +9,17 @@ p{
     font-weight: 300;
     margin: 8px auto;
 }
+.add-book-title{
+    font-size: 35px;
+    padding: 10px;
+}
 .book-store{
     border: 3px solid black;
     border-radius: 10px;
     box-shadow: 0 0 10px 2px black;
     display: flex;
     flex-direction: column;
-    margin: 10px auto;
+    margin: 20px auto;
     padding: 10px 25px;
     align-items: center;
     width: fit-content;
@@ -205,23 +209,40 @@ form{
 .search-book{
     display: flex;
     flex-direction: row;
-    align-items: stretch;
-    border: 1px solid black;
-    border-radius: 8px;
-    padding: 5px;
+    align-items: center;
     margin: 10px 20px;
 
+}
+.book-search-div{
+    flex: 1;
+    border: 1px solid black;
+    border-radius: 8px;    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px 20px;
+    padding: 8px;
 }
 .book-search-input{
     border: none;
     flex: 1;
-    padding: 8px;
     height: 100%;
     font-size: 18px;
     outline: none;
 }
-.search-book img{
+.search-icon{
+    width: 40px;
+}
+.filter-icon{
     width:40px;
+    margin-left: px;
+    padding: 5px 8px;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+.filter-icon:hover{
+    transform: scale(1.05);
+    cursor: pointer;
 }
 .header{
     margin: 0;

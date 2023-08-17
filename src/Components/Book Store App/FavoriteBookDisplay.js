@@ -3,12 +3,12 @@ import book3 from './Images/book3.png';
 import emptyStar from './Images/empty-star.png'
 import filledStar from './Images/filled-star-1.png'
 import filter from './Images/filter.png'
-const BookDisplay = ({ books, favorite, setFavorite, handleFavorite, handleDelete, handleRead, searchBook, setSearchBook }) =>{   
+const FavoriteBookDisplay = ({ books, favorite, setFavorite, handleFavorite, handleDelete, handleRead, searchBook, setSearchBook }) =>{   
 
     return(
        <div className='books-home-page'>
-            <p className="main-title">My Books</p>
-            <div className="search-book">
+            <p className="main-title">My Favorite Books</p>
+            {/* <div className="search-book">
                 <div className='book-search-div'>
                     <input 
                         type='text'
@@ -20,7 +20,7 @@ const BookDisplay = ({ books, favorite, setFavorite, handleFavorite, handleDelet
                     <img className="search-icon" src={search} />
                 </div>
                 <img className='filter-icon' src={filter}/>
-            </div>
+            </div> */}
             {books.length ?
             <div className="all-book-list">
                 {books.map((book) => 
@@ -68,10 +68,10 @@ const BookDisplay = ({ books, favorite, setFavorite, handleFavorite, handleDelet
                 )}
             </div>
                 :
-                <p className="empty-book-list">Your List is Empty</p>
+                <p className="empty-book-list">Your Favorite List is Empty</p>
             }
         </div>
     );
 }
 
-export default BookDisplay;
+export default FavoriteBookDisplay;
