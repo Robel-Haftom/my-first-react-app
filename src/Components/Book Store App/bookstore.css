@@ -1,6 +1,8 @@
 body{
     text-align: center; 
     background-color: white;
+    margin: 0;
+    padding: 0;
 }
 p{
     font-size: 20px;
@@ -246,15 +248,18 @@ form{
 }
 .header{
     margin: 0;
-    padding: 0;
+    padding: 20px 20px;
     display: flex;
     flex-direction: column;
-    background-color: aqua;
-    border-radius: 10px;
+    background-image: url("./Images/blured-book.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .header-title{
     font-size: 35px;
     font-weight: 500;
+    color: black;
 }
 .header ul{
     margin: 0;
@@ -267,7 +272,7 @@ form{
 .header ul li{
     list-style: none;
     padding: 5px;
-    font-size: 20px;
+    font-size: 25px;
     font-family: 'Poppins';
 }
 .header ul li a{
