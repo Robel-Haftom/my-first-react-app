@@ -4,6 +4,7 @@ import Header from "./Components/Book Store App/Header";
 import { useEffect, useState } from 'react'
 import {Route, Routes, useNavigate} from 'react-router-dom'
 import FavoriteBookDisplay from "./Components/Book Store App/FavoriteBookDisplay";
+import Genre from "./Components/Book Store App/Genre";
 
 const BookStoreApp = () => {
     const API_URL = "http://localhost:3500/books";
@@ -16,6 +17,7 @@ const BookStoreApp = () => {
     const [favorite, setFavorite] = useState(false);
     const [genre, setGenre] = useState("Unknown");
     const [searchBook, setSearchBook] = useState("");
+    const [filterGenre, setFilterGenre] = useState("");
 
     const navigate = useNavigate();
     const randomChars = ['a','b','c','d','e','f','g','h','i','j',1,2,3,4,5,6,7,8,9,0];
@@ -126,16 +128,26 @@ const BookStoreApp = () => {
                     <FavoriteBookDisplay 
                         books={books.filter(book =>(
                             book.favorite == true))}
-                        favorite={favorite}
-                        setFavorite={setFavorite}
                         handleFavorite={handleFavorite}
                         handleDelete={handleDelete}
                         handleRead={handleRead}
-                        searchBook={searchBook}
-                        setSearchBook={setSearchBook}
                         />
                     }
                 />  
+                <Route 
+                    path="/genre"
+                    element={
+                        <Genre
+                            books={books.filter(book =>(
+                                book.genre == filterGenre))}
+                            setFilterGenre={setFilterGenre}
+                            handleFavorite={handleFavorite}
+                            handleDelete={handleDelete}
+                            handleRead={handleRead}
+                        />
+                    }
+                
+                />
             </Routes>
            
         </>

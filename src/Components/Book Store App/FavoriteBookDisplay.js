@@ -3,7 +3,8 @@ import book3 from './Images/book3.png';
 import emptyStar from './Images/empty-star.png'
 import filledStar from './Images/filled-star-1.png'
 import filter from './Images/filter.png'
-const FavoriteBookDisplay = ({ books, favorite, setFavorite, handleFavorite, handleDelete, handleRead, searchBook, setSearchBook }) =>{   
+
+const FavoriteBookDisplay = ({ books, handleFavorite, handleDelete, handleRead }) =>{   
 
     return(
        <div className='books-home-page'>
